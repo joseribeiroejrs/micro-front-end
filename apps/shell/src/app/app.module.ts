@@ -18,13 +18,17 @@ import { EffectsModule } from '@ngrx/effects';
     RouterModule.forRoot(
       [
         {
-          path: '',
+          path: 'home',
           component: HomeComponent,
         },
         {
           path: 'gallery',
           loadChildren: () =>
             import('gallery/Module').then((m) => m.RemoteEntryModule),
+        },
+        {
+          path: '**',
+          component: HomeComponent,
         },
       ],
       { initialNavigation: 'enabledBlocking' }
@@ -33,4 +37,4 @@ import { EffectsModule } from '@ngrx/effects';
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

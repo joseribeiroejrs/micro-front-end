@@ -1,1 +1,16 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+  font-family: 'Roboto', sans-serif;
+  color: #a996f4;
+}
+
+body {
+  padding: 20px;
+}
+
+h1 {
+  color: #7776BC;
+}
+
+h1, p {
+  text-align: center;
+}

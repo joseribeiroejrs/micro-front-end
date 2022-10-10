@@ -23,8 +23,14 @@ import { GalleryFacade } from '@mf-app/shared/data-store';
     `
       .container {
         display: grid;
-        width: 100%;
+        width: calc(100% - 6vw);
         grid-template-columns: repeat(4, 1fr);
+        background-color: #ece8f9;
+        padding-top: 1.5vw;
+        padding-bottom: 1.5vw;
+        padding-right: 3vw;
+        padding-left: 3vw;
+        border-radius: 20px;
       }
 
       .selected {
@@ -33,6 +39,10 @@ import { GalleryFacade } from '@mf-app/shared/data-store';
 
       img {
         width: 20vw;
+        height: 20vw;
+        border-radius: 20px;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        object-fit: cover;
       }
     `,
   ],
@@ -41,7 +51,7 @@ export class RemoteEntryComponent {
   cats = this.galleryFacade.allGallery$ as any;
   selectedCats = this.galleryFacade.selectedCats$;
 
-  constructor(private galleryFacade: GalleryFacade) {}
+  constructor(private galleryFacade: GalleryFacade) { }
 
   toggleSelectCat(cat: any) {
     this.galleryFacade.toggleSelectCat(cat);

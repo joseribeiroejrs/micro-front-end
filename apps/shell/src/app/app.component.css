@@ -1,0 +1,17 @@
+ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+}
+
+li {
+  cursor: pointer;
+  color: #a996f4;
+  margin-left: 20px;
+  font-size: 24px;
+}
+
+.active {
+  text-decoration: underline;
+  color: #7776BC;
+}

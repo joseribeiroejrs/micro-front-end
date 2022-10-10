@@ -4,7 +4,17 @@ import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'mf-app-gallery-entry',
-  template: ` <div class="container">
+  template: `
+  <main>
+    <h1>
+      Seja bem vindo ao site dos gatos
+    </h1>
+
+    <p>
+    Gatos amam mais as pessoas do que elas permitiriam. Mas eles têm sabedoria suficiente para manter isso em segredo (Mary Wilkins);
+    </p>
+  </main>
+  <div class="container">
     <ng-container *ngFor="let cat of cats | async">
       <div class="child">
         <h3>
@@ -34,9 +44,9 @@ export class HomeComponent implements OnInit {
   cats = this.galleryFacade.selectedCats$.pipe(
     map((selectedCats: any) => Array.from(selectedCats.values()))
   ) as any;
-  constructor(private galleryFacade: GalleryFacade) {}
+  constructor(private galleryFacade: GalleryFacade) { }
 
   ngOnInit(): void {
-    //this.galleryFacade.init();
+    this.galleryFacade.init();
   }
 }
